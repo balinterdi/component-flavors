@@ -1,5 +1,14 @@
-{{!-- The following component displays Ember's default welcome message. --}}
-{{welcome-page}}
-{{!-- Feel free to remove this! --}}
-
-{{outlet}}
+<div class="text-center w-full mb-8 h-4">
+  <h1 class="mt-4">Component Flavors</h1>
+</div>
+<nav
+  class="w-full flex items-center h-4 m-0 mb-4 p-8 h-12 bg-white text-blue text-lg font-sans shadow-md z-10"
+  role="navigation"
+>
+  <div class="mr-6">
+    {{link-to "Classic" "star-rating" class="text-grey-darkest hover:text-grey-darkest"}}
+  </div>
+</nav>
+<div class="p-8 mx-auto">
+  {{outlet}}
+</div>

@@ -1,0 +1,24 @@
+<h2 class="mb-4">Code</h2>
+<div class="flex flex-row flex-wrap w-100 justify-start">
+  <div class="m-4">
+    <h4 class="mb-2">Component</h4>
+    {{code-snippet name="star-rating.js"}}
+  </div>
+  <div class="m-4">
+    <h4 class="mb-2">Template</h4>
+    {{code-snippet name="star-rating.hbs"}}
+  </div>
+  <div class="m-4">
+    <h4 class="mb-2">Call</h4>
+    {{code-snippet name="star-rating-call.hbs"}}
+  </div>
+  <div class="m-4">
+    <h4 class="mb-2">HTML</h4>
+    {{code-snippet name="star-rating-classic.html"}}
+  </div>
+</div>
+<h2 class="my-4">Result</h2>
+{{star-rating
+  rating=model.rating
+  onClick=(action (mut model.rating)
+)}}

@@ -1,0 +1,22 @@
+// BEGIN-SNIPPET star-rating
+{{#each stars as |star|}}
+  <span
+    class="rating-star"
+    role="button"
+    onclick={{action "setRating" star.rating}}
+  >
+    {{#if star.isFull}}
+      {{fa-icon "star"}}
+    {{else}}
+      {{fa-icon "star-o"}}
+    {{/if}}
+  </span>
+{{/each}}
+// END-SNIPPET
+
+// BEGIN-SNIPPET star-rating-call
+{{star-rating
+  rating=model.rating
+  onClick=(action (mut model.rating))
+}}
+// END-SNIPPET
