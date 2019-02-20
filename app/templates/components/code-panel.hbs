@@ -1,0 +1,21 @@
+<div class="flex flex-row w-1/3 justify-between">
+  {{#each @blocks as |block|}}
+    <label>
+      <input
+        type="checkbox"
+        checked={{get this.activeBlocks block.id}}
+        onclick={{action "toggleActiveBlock" block.id}}
+      >
+      <span>{{block.label}}</span>
+    </label>
+  {{/each}}
+</div>
+<div class="flex flex-row flex-wrap w-100 justify-start">
+  {{#each @blocks as |block|}}
+    {{#if (get this.activeBlocks block.id)}}
+      <CodeBlock @label={{block.label}} as |codeBlock|>
+        {{codeBlock.snippet name=block.snippet}}
+      </CodeBlock>
+    {{/if}}
+  {{/each}}
+</div>
