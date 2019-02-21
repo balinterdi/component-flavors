@@ -1,8 +1,50 @@
-<h2 class="mb-4">Code</h2>
-<CodePanel @blocks={{blocks}} />
+<div class="px-8">
+  <h1 class="mb-8">Classic (old-style) components</h1>
+  <h2 class="mb-4">Code</h2>
+  <CodePanel @blocks={{blocks}} />
+</div>
 
-<h2 class="my-4">Result</h2>
-{{star-rating
-  rating=model.rating
-  onClick=(action (mut model.rating)
-)}}
+<div class="bg-grey-lighter py-2 px-8 mt-8">
+  <h2 class="mb-4">Result</h2>
+  {{star-rating
+    rating=model.rating
+    onClick=(action (mut model.rating)
+  )}}
+</div>
+
+<div class="px-8">
+  <h2 class="mt-8 mb-4">Features</h2>
+  <div class="flex flex-row space-around text-white text-xl">
+    <FeatureCard
+      @title="Available"
+      @text="Since the beginning of time"
+      class="bg-teal-dark mr-4"
+    />
+    <FeatureCard
+      @title="HTML Semantics"
+      @text="Inner"
+      class="bg-purple-dark mr-4"
+    />
+    <FeatureCard
+      @title="Splattributes"
+      @text="No"
+      class="bg-orange-dark mr-4"
+    />
+    <FeatureCard
+      @title="Coolness factor"
+      @text="0"
+      class="bg-red-dark"
+    />
+  </div>
+</div>
+{{!-- }}
+<div class="w-1/3 mx-auto border-2 p-4 text-white bg-teal-dark">
+  <h4 class="text-center pb-4">Classic components</h4>
+  <dl>
+    <dt class="font-semibold">Available</dt>
+    <dd class="mb-4">Since the beginning of time</dd>
+    <dt class="font-semibold">HTML Semantics</dt>
+    <dd class="mb-4">Inner</dd>
+  </dl>
+</div>
+--}}
