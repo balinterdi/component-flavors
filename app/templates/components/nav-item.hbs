@@ -1,0 +1,8 @@
+{{#let (is-active @route) as |active|}}
+  <div class="mr-6 p-4 {{if active "bg-purple"}}">
+    {{link-to @label @route
+      class=(if active
+        "no-underline text-white"
+        "no-underline text-grey-darkest hover:text-grey-darkest")}}
+  </div>
+{{/let}}

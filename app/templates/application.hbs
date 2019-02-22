@@ -1,19 +1,15 @@
-<div class="text-center w-full mb-8 h-4">
-  <h1 class="mt-4">Component Flavors</h1>
+<div class="w-full bg-purple-lightest">
+  <div class="text-center py-4">
+    <h1>Component Flavors</h1>
+  </div>
+  <nav
+    class="flex items-center h-4 m-0 mb-4 p-8 h-12 text-blue text-lg font-sans shadow-md z-10"
+    role="navigation"
+  >
+    <NavItem @route="star-rating" @label="Classic" />
+    <NavItem @route="template-only" @label="Template-only" />
+  </nav>
 </div>
-<nav
-  class="w-full flex items-center h-4 m-0 mb-4 p-8 h-12 bg-white text-blue text-lg font-sans shadow-md z-10"
-  role="navigation"
->
-  <div class="mr-6">
-    {{link-to "Classic" "star-rating"
-      class="no-underline text-grey-darkest hover:text-grey-darkest"}}
-  </div>
-  <div class="mr-6">
-    {{link-to "Template-only" "template-only"
-      class="no-underline text-grey-darkest hover:text-grey-darkest"}}
-  </div>
-</nav>
 <div class="mx-auto px-8">
   {{outlet}}
 </div>
