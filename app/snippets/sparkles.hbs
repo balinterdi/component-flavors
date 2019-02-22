@@ -1,0 +1,22 @@
+// BEGIN-SNIPPET sparkles-rating
+{{#each this.stars as |star|}}
+  <span
+    class="rating-star"
+    role="button"
+    onclick={{action @onClick star.rating}}
+  >
+    {{#if star.isFull}}
+      {{fa-icon "star"}}
+    {{else}}
+      {{fa-icon "star-o"}}
+    {{/if}}
+  </span>
+{{/each}}
+// END-SNIPPET
+
+// BEGIN-SNIPPET sparkles-rating-call
+<SparklesRating
+  @rating={{model.rating}}
+  @onClick={{action (mut model.rating)}}
+/>
+// END-SNIPPET

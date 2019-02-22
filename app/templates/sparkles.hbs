@@ -1,0 +1,21 @@
+<h1 class="mb-4">Sparkles</h1>
+<div class="mb-8 p-4 bg-blue-lightest w-1/4">
+  <label class="font-bold">Variant:</label>
+  <span class="font-mono ml-4">Component Manager</span>
+</div>
+
+<h2 class="mb-4">Code</h2>
+<CodePanel
+  @blocks={{array
+    (hash id="component" label="Component" snippet="sparkles-rating.js")
+    (hash id="template" label="Template" snippet="sparkles-rating.hbs")
+    (hash id="call" label="Call" snippet="sparkles-rating-call.hbs")
+    (hash id="html" label="HTML" snippet="star-rating-sparkles.html")
+  }}
+/>
+
+<h2 class="mb-4">Result</h2>
+<SparklesRating
+  @rating={{model.rating}}
+  @onClick={{action (mut model.rating)}}
+/>

@@ -11,6 +11,7 @@ Router.map(function() {
   this.route('named-arguments');
   this.route('template-only');
   this.route('angle-bracket');
+  this.route('sparkles');
 });
 
 export default Router;
