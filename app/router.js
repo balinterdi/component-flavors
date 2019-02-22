@@ -7,7 +7,7 @@ const Router = EmberRouter.extend({
 });
 
 Router.map(function() {
-  this.route('star-rating');
+  this.route('classic');
   this.route('named-arguments');
   this.route('template-only');
 });
