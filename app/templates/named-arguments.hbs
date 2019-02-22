@@ -1,5 +1,17 @@
+<h1 class="mb-8">Named arguments</h1>
+<h2 class="mb-4">Code</h2>
+<CodePanel
+  @blocks={{array
+    (hash id="component" label="Component" snippet="star-rating.js")
+    (hash id="template" label="Template" snippet="star-rating-named-args.hbs")
+    (hash id="call" label="Call" snippet="star-rating-call.hbs")
+    (hash id="html" label="HTML" snippet="star-rating-classic.html")
+  }}
+/>
+
 <h2 class="mb-4">Result</h2>
-{{star-rating
+{{star-rating-named-args
   rating=model.rating
-  onClick=(action (mut model.rating)
-)}}
+  maxRating=8
+  onClick=(action (mut model.rating))
+}}

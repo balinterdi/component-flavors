@@ -2,7 +2,7 @@
   <span
     class="rating-star"
     role="button"
-    onclick={{action onClick star.rating}}
+    onclick={{action (or @onClick "noOp") star.rating}}
   >
     {{#if star.isFull}}
       {{fa-icon "star"}}

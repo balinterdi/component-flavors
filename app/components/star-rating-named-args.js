@@ -15,4 +15,8 @@ export default Component.extend({
     }
     return stars;
   }),
+
+  actions: {
+    noOp() {}
+  }
 });

@@ -4,7 +4,7 @@ export default Route.extend({
   model() {
     return {
       name: 'Hikaru Nakamura',
-      rating: 5
+      rating: 3
     }
   }
 });

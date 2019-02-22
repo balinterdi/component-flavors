@@ -16,13 +16,6 @@ export default Component.extend({
     }
     return stars;
   }),
-
-  actions: {
-    setRating(newRating) {
-      return this.onClick(newRating);
-    }
-  }
-
 });
 // END-SNIPPET
 
