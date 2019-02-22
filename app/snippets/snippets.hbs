@@ -60,3 +60,10 @@
   onClick=(action (mut model.rating))
 }}
 // END-SNIPPET
+
+// BEGIN-SNIPPET star-rating-call-angle-bracket
+<StarRating
+  @rating={{model.rating}}
+  @onClick={{action (mut model.rating)}}
+/>
+// END-SNIPPET

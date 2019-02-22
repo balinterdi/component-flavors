@@ -10,6 +10,7 @@ Router.map(function() {
   this.route('classic');
   this.route('named-arguments');
   this.route('template-only');
+  this.route('angle-bracket');
 });
 
 export default Router;
