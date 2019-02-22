@@ -1,0 +1,14 @@
+{{#each (upto 1 @maxRating) as |number|}}
+  <span
+    class="rating-star"
+    role="button"
+    onclick={{action @onClick number}}
+    ...attributes
+  >
+    {{#if (gte @rating number)}}
+      {{fa-icon "star"}}
+    {{else}}
+      {{fa-icon "star-o"}}
+    {{/if}}
+  </span>
+{{/each}}

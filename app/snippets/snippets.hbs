@@ -20,3 +20,27 @@
   onClick=(action (mut model.rating))
 }}
 // END-SNIPPET
+
+// BEGIN-SNIPPET star-rating-to
+{{#each (upto 1 @maxRating) as |number|}}
+  <span
+    class="rating-star"
+    role="button"
+    onclick={{action @onClick number}}
+  >
+    {{#if (gte @rating number)}}
+      {{fa-icon "star"}}
+    {{else}}
+      {{fa-icon "star-o"}}
+    {{/if}}
+  </span>
+{{/each}}
+// END-SNIPPET
+
+// BEGIN-SNIPPET star-rating-to-call
+{{star-rating-to
+  rating=model.rating
+  maxRating=5
+  onClick=(action (mut model.rating))
+}}
+// END-SNIPPET

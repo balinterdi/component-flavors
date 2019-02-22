@@ -1,41 +1,42 @@
-<div class="px-8">
-  <h1 class="mb-8">Classic (old-style) components</h1>
-  <h2 class="mb-4">Code</h2>
-  <CodePanel @blocks={{blocks}} />
-</div>
+<h1 class="mb-8">Classic (old-style) Components</h1>
+<h2 class="mb-4">Code</h2>
+<CodePanel
+  @blocks={{array
+    (hash id="component" label="Component" snippet="star-rating.js")
+    (hash id="template" label="Template" snippet="star-rating.hbs")
+    (hash id="call" label="Call" snippet="star-rating-call.hbs")
+    (hash id="html" label="HTML" snippet="star-rating-classic.html")
+  }}
+/>
 
-<div class="bg-grey-lighter py-2 px-8 mt-8">
-  <h2 class="mb-4">Result</h2>
-  {{star-rating
-    rating=model.rating
-    onClick=(action (mut model.rating)
-  )}}
-</div>
+<h2 class="mb-4">Result</h2>
+{{star-rating
+  rating=model.rating
+  onClick=(action (mut model.rating)
+)}}
 
-<div class="px-8">
-  <h2 class="mt-8 mb-4">Features</h2>
-  <div class="flex flex-row space-around text-white text-xl">
-    <FeatureCard
-      @title="Available"
-      @text="Since the beginning of time"
-      class="bg-teal-dark mr-4"
-    />
-    <FeatureCard
-      @title="HTML Semantics"
-      @text="Inner"
-      class="bg-purple-dark mr-4"
-    />
-    <FeatureCard
-      @title="Splattributes"
-      @text="No"
-      class="bg-orange-dark mr-4"
-    />
-    <FeatureCard
-      @title="Coolness factor"
-      @text="0"
-      class="bg-red-dark"
-    />
-  </div>
+<h2 class="mt-8 mb-4">Features</h2>
+<div class="flex flex-row space-around text-white text-3xl">
+  <FeatureCard
+    @title="Available"
+    @text="Since the beginning of time"
+    class="bg-teal-dark mr-4"
+  />
+  <FeatureCard
+    @title="HTML Semantics"
+    @text="Inner"
+    class="bg-purple-dark mr-4"
+  />
+  <FeatureCard
+    @title="Splattributes"
+    @text="No"
+    class="bg-orange-dark mr-4"
+  />
+  <FeatureCard
+    @title="Coolness factor"
+    @text="0"
+    class="bg-red-dark"
+  />
 </div>
 {{!-- }}
 <div class="w-1/3 mx-auto border-2 p-4 text-white bg-teal-dark">

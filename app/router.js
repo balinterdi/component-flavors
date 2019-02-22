@@ -8,6 +8,8 @@ const Router = EmberRouter.extend({
 
 Router.map(function() {
   this.route('star-rating');
+  this.route('named-arguments');
+  this.route('template-only');
 });
 
 export default Router;

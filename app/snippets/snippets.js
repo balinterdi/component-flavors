@@ -25,3 +25,11 @@ export default Component.extend({
 
 });
 // END-SNIPPET
+
+// eslint-disable-next-line no-unused-vars
+let features =
+// BEGIN-SNIPPET optional-features
+{
+  "template-only-glimmer-components": true
+}
+// END-SNIPPET

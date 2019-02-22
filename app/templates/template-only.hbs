@@ -1,0 +1,41 @@
+<h1 class="mb-8">Template-only Components</h1>
+<h2 class="mb-4">Code</h2>
+<CodePanel
+  @blocks={{array
+    (hash id="template" label="Template" snippet="star-rating-to.hbs")
+    (hash id="call" label="Call" snippet="star-rating-to-call.hbs")
+    (hash id="opt-features" label="optional-features.json" snippet="optional-features.js")
+    (hash id="html" label="HTML" snippet="star-rating-to.html")
+  }}
+/>
+
+<h2 class="mb-4">Result</h2>
+{{star-rating-to
+  rating=model.rating
+  maxRating=5
+  onClick=(action (mut model.rating))
+}}
+
+<h2 class="mt-8 mb-4">Features</h2>
+<div class="flex flex-row space-around text-white text-3xl">
+  <FeatureCard
+    @title="Available"
+    @text="Since 3.1"
+    class="bg-teal-dark mr-4"
+  />
+  <FeatureCard
+    @title="HTML Semantics"
+    @text="Outer"
+    class="bg-purple-dark mr-4"
+  />
+  <FeatureCard
+    @title="Splattributes"
+    @text="No"
+    class="bg-orange-dark mr-4"
+  />
+  <FeatureCard
+    @title="Coolness factor"
+    @text="3"
+    class="bg-red-dark"
+  />
+</div>
