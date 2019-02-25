@@ -6,9 +6,9 @@
     onclick={{action onClick star.rating}}
   >
     {{#if star.isFull}}
-      {{fa-icon "star"}}
+      <i class="fas fa-star"></i>
     {{else}}
-      {{fa-icon "star-o"}}
+      <i class="far fa-star"></i>
     {{/if}}
   </span>
 {{/each}}
@@ -29,9 +29,9 @@
     onclick={{action @onClick star.rating}}
   >
     {{#if star.isFull}}
-      {{fa-icon "star"}}
+      <i class="fas fa-star"></i>
     {{else}}
-      {{fa-icon "star-o"}}
+      <i class="far fa-star"></i>
     {{/if}}
   </span>
 {{/each}}
@@ -45,9 +45,9 @@
     onclick={{action @onClick number}}
   >
     {{#if (gte @rating number)}}
-      {{fa-icon "star"}}
+      <i class="fas fa-star"></i>
     {{else}}
-      {{fa-icon "star-o"}}
+      <i class="far fa-star"></i>
     {{/if}}
   </span>
 {{/each}}
