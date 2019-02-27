@@ -1,8 +1,46 @@
-<h1>Definitions</h1>
-<dl class="mt-8">
-  <dt class="mb-1 font-semibold">HTML Semantics</dt>
-  <dd class="mb-8">Determines whether the component's template is the inner or outer HTML of the rendered element</dd>
+<div class="w-1/2 mx-auto mt-8 mb-16">
+  <h1>Definitions</h1>
+  <dl class="mt-8">
+    <dt class="mb-1 font-semibold">Component arguments</dt>
+    <dd class="mb-8">The possible arguments of a component "function call".</dd>
 
-  <dt class="mb-1 font-semibold">Splattributes</dt>
-  <dd class="mb-8">The ability to pass <i>HTML</i> attributes to a component call and have it applied to an element in the component's template</dd>
-</dl>
+    <CodeBlock as |codeBlock|>
+      {{codeBlock.snippet name="star-rating-call.hbs"}}
+    </CodeBlock>
+    <p class="mb-8">
+      The component arguments are <span class="highlighted-text">rating</span> and <span class="highlighted-text">onClick</span>.
+    </p>
+
+    <dt class="mb-1 font-semibold">Component properties</dt>
+    <dd class="mb-8">The properties (computed or not) defined in a component's class.</dd>
+    <CodeBlock as |codeBlock|>
+      {{codeBlock.snippet name="star-rating.js"}}
+    </CodeBlock>
+    <p class="mb-8">
+      The component properties are
+      <span class="highlighted-text">classNames</span>,
+      <span class="highlighted-text">rating</span>,
+      <span class="highlighted-text">maxRating</span>, and
+      <span class="highlighted-text">onClick</span>.
+    </p>
+
+    <dt class="mb-1 font-semibold">HTML Semantics</dt>
+    <dd class="mb-8">Determines whether the component's template is the inner or outer HTML of the rendered element.</dd>
+
+    <dt class="mb-1 font-semibold">Splattributes</dt>
+    <dd class="mb-8">The ability to pass <i>HTML</i> attributes to a component call and have it applied to an element in the component's template.</dd>
+
+    <dt class="mb-1 font-semibold">Glimmer components</dt>
+    <dd class="mb-8">A component that implements (some of) the Glimmer Component API, notably:</dd>
+    <ul class="ml-4">
+      <li class="mb-2">Outer HTML semantics</li>
+      <li class="mb-2"><span class="highlighted-text">this.args</span> for component arguments</li>
+      <li class="mb-2">Splattributes support</li>
+      <li class="mb-2">ES6 class syntax</li>
+      <li class="mb-2">Decorator support</li>
+      <li class="mb-2">Tracked properties</li>
+      {{!-- <li>Element modifiers support</li> --}}
+    </ul>
+
+  </dl>
+</div>

@@ -7,11 +7,15 @@ const Router = EmberRouter.extend({
 });
 
 Router.map(function() {
+  this.route('presentation', function() {
+    this.route('confusion');
+  });
   this.route('classic');
   this.route('named-arguments');
   this.route('template-only');
   this.route('angle-bracket');
   this.route('sparkles');
+  this.route('resources');
 });
 
 export default Router;

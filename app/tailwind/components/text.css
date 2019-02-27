@@ -15,3 +15,6 @@
  @apply .bg-blue-dark;
 }
 */
+.highlighted-text {
+  @apply .text-red-dark .bg-grey-light .p-1;
+}

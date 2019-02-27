@@ -1,0 +1,16 @@
+<h1 class="mb-4">Where do these things come from?</h1>
+<CodeSnippet @name="confusing-template.hbs" class="mb-2" />
+
+<p>
+  Example taken from
+  <a href="https://github.com/travis-ci/travis-web/blob/master/app/templates/components/org-item.hbs">Travis CI's org-item component</a>
+</p>
+
+<p>Dynamic expressions can be:</p>
+<ul>
+  <li>Component arguments passed in</li> {{!-- Use named arguments, or this.args --}}
+  <li>Component properties</li> {{!-- Use this.property --}}
+  <li>Block variables</li> {{!-- Definition is probably close enough to the place where you use it --}}
+  <li>Components defined elsewhere</li> {{!-- Use template imports --}}
+  <li>Template helpers</li> {{!-- Whatever is left --}}
+</ul>
