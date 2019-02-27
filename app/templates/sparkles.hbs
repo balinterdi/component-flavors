@@ -16,6 +16,10 @@
 
 <h2 class="mb-4">Result</h2>
 <SparklesRating
-  @rating={{model.rating}}
-  @onClick={{action (mut model.rating)}}
+  @rating={{this.model.rating}}
+  @onClick={{action (mut this.model.rating)}}
 />
+{{input
+  type="number"
+  class="p-2"
+  value=this.model.rating}}

@@ -1,5 +1,5 @@
 // BEGIN-SNIPPET star-rating
-{{#each stars as |star|}}
+{{#each this.stars as |star|}}
   <span
     class="rating-star"
     role="button"
@@ -16,13 +16,13 @@
 
 // BEGIN-SNIPPET star-rating-call
 {{star-rating
-  rating=model.rating
-  onClick=(action (mut model.rating))
+  rating=this.model.rating
+  onClick=(action (mut this.model.rating))
 }}
 // END-SNIPPET
 
 // BEGIN-SNIPPET star-rating-named-args
-{{#each stars as |star|}}
+{{#each this.stars as |star|}}
   <span
     class="rating-star"
     role="button"
@@ -55,15 +55,26 @@
 
 // BEGIN-SNIPPET star-rating-to-call
 {{star-rating-to
-  rating=model.rating
+  rating=this.model.rating
   maxRating=5
-  onClick=(action (mut model.rating))
+  onClick=(action (mut this.model.rating))
 }}
 // END-SNIPPET
 
 // BEGIN-SNIPPET star-rating-call-angle-bracket
 <StarRating
-  @rating={{model.rating}}
-  @onClick={{action (mut model.rating)}}
+  @rating={{this.model.rating}}
+  @onClick={{action (mut this.model.rating)}}
 />
+// END-SNIPPET
+
+// BEGIN-SNIPPET confusing-template
+{{#link-to-account routeName routeModel class="org-info"}}
+  <span class="account-avatar">
+    {{user-avatar account=account url=account.avatarUrl name=name showSubscriptionStatus=true}}
+  </span>
+  <span class="account-info">
+    <h3 class="account-name">{{name}}</h3>
+  </span>
+{{/link-to-account}}
 // END-SNIPPET

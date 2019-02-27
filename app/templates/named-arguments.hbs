@@ -16,7 +16,7 @@
 
 <h2 class="mb-4">Result</h2>
 {{star-rating-named-args
-  rating=model.rating
-  maxRating=8
-  onClick=(action (mut model.rating))
+  rating=this.model.rating
+  maxRating=5
+  onClick=(action (mut this.model.rating))
 }}
