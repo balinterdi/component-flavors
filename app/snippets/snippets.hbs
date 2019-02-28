@@ -21,6 +21,21 @@
 }}
 // END-SNIPPET
 
+// BEGIN-SNIPPET star-rating-call-positional
+{{star-rating
+  this.model.rating
+  onClick=(action (mut this.model.rating))
+}}
+// END-SNIPPET
+
+// BEGIN-SNIPPET star-rating-call-with-default-arg-value
+{{star-rating
+  rating=this.model.rating
+  maxRating=10
+  onClick=(action (mut this.model.rating))
+}}
+// END-SNIPPET
+
 // BEGIN-SNIPPET star-rating-named-args
 {{#each this.stars as |star|}}
   <span
@@ -36,6 +51,27 @@
   </span>
 {{/each}}
 // END-SNIPPET
+
+// BEGIN-SNIPPET star-rating-named-args-with-default-arg-value
+{{#each this.stars as |star|}}
+  <span
+    class="rating-star"
+    role="button"
+    onclick={{action (or @onClick "noOp") star.rating}}
+  >
+    {{#if star.isFull}}
+      <i class="fas fa-star"></i>
+    {{else}}
+      <i class="far fa-star"></i>
+    {{/if}}
+  </span>
+{{/each}}
+// END-SNIPPET
+
+// BEGIN-SNIPPET star-rating-named-args-call-with-default-arg-value
+{{star-rating rating=this.model.rating}}
+// END-SNIPPET
+
 
 // BEGIN-SNIPPET star-rating-to
 {{#each (upto 1 @maxRating) as |number|}}
@@ -61,6 +97,28 @@
 }}
 // END-SNIPPET
 
+// BEGIN-SNIPPET star-rating-to-with-default-arg-value
+{{#let (or @maxRating 5) (or @onClick (noop)) as |maxRating onClick|}}
+  {{#each (upto 1 maxRating) as |number|}}
+    <span
+      class="rating-star"
+      role="button"
+      onclick={{action onClick number}}
+    >
+      {{#if (gte @rating number)}}
+        <i class="fas fa-star"></i>
+      {{else}}
+        <i class="far fa-star"></i>
+      {{/if}}
+    </span>
+  {{/each}}
+{{/let}}
+// END-SNIPPET
+
+// BEGIN-SNIPPET star-rating-to-call-with-default-arg-value
+{{star-rating-to rating=this.model.rating}}
+// END-SNIPPET
+
 // BEGIN-SNIPPET star-rating-call-angle-bracket
 <StarRating
   @rating={{this.model.rating}}
@@ -76,5 +134,20 @@
   <span class="account-info">
     <h3 class="account-name">{{name}}</h3>
   </span>
+{{/link-to-account}}
+// END-SNIPPET
+
+// BEGIN-SNIPPET clear-template
+{{#link-to-account this.routeName this.routeModel class="org-info"}}
+  <span class="account-avatar">
+    {{user-avatar account=@account url=@account.avatarUrl name=this.name showSubscriptionStatus=true}}
+  </span>
+  <span class="account-info">
+    <h3 class="account-name">{{this.name}}</h3>
+  </span>
+  {{!--
+  I actually guessed that @routeName and @routeModel were also component arguments.
+  Turns out, only @account is.
+  --}}
 {{/link-to-account}}
 // END-SNIPPET

@@ -1,7 +1,7 @@
 import Component from '@ember/component';
 import { computed } from '@ember/object';
 
-export default Component.extend({
+let StarRating = Component.extend({
   classNames: ['rating-panel'],
 
   rating: 0,
@@ -16,3 +16,9 @@ export default Component.extend({
     return stars;
   }),
 });
+
+StarRating.reopenClass({
+  positionalParams: ['rating']
+});
+
+export default StarRating;

@@ -1,7 +1,25 @@
 <h1 class="mb-4">Sparkles</h1>
-<div class="mb-8 p-4 bg-blue-lightest w-1/4">
-  <label class="font-bold">Variant:</label>
-  <span class="font-mono ml-4">Component Manager</span>
+<div class="flex flex-row flex-wrap mb-8">
+  <FeatureTab
+    class="bg-blue-light"
+    @label="Variant"
+    @text="Component Manager" />
+  <FeatureTab
+    class="bg-teal-light"
+    @label="Available"
+    @text=">= 2.12, with addon" />
+  <FeatureTab
+    class="bg-purple-light"
+    @label="HTML Semantics"
+    @text="Outer" />
+  <FeatureTab
+    class="bg-orange-light"
+    @label="Splattributes"
+    @text="Yes" />
+  <FeatureTab
+    class="bg-red-light"
+    @label="Coolness Factor"
+    @text="" />
 </div>
 
 <h2 class="mb-4">Code</h2>

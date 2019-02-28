@@ -1,7 +1,25 @@
 <h1 class="mb-4">Template-only Components</h1>
-<div class="mb-8 p-4 bg-blue-lightest w-1/4">
-  <label class="font-bold">Variant:</label>
-  <span class="font-mono ml-4">Component Manager</span>
+<div class="flex flex-row flex-wrap mb-8">
+  <FeatureTab
+    class="bg-blue-light"
+    @label="Variant"
+    @text="Component Manager" />
+  <FeatureTab
+    class="bg-teal-light"
+    @label="Available"
+    @text=">= 3.1" />
+  <FeatureTab
+    class="bg-purple-light"
+    @label="HTML Semantics"
+    @text="Outer" />
+  <FeatureTab
+    class="bg-orange-light"
+    @label="Splattributes"
+    @text="Yes" />
+  <FeatureTab
+    class="bg-red-light"
+    @label="Coolness Factor"
+    @text="" />
 </div>
 <h2 class="mb-4">Code</h2>
 <CodePanel
@@ -20,26 +38,7 @@
   onClick=(action (mut this.model.rating))
 }}
 
-<h2 class="mt-8 mb-4">Features</h2>
-<div class="flex flex-row space-around text-white text-3xl">
-  <FeatureCard
-    @title="Available"
-    @text="Since 3.1"
-    class="bg-teal-dark mr-4"
-  />
-  <FeatureCard
-    @title="HTML Semantics"
-    @text="Outer"
-    class="bg-purple-dark mr-4"
-  />
-  <FeatureCard
-    @title="Splattributes"
-    @text="No"
-    class="bg-orange-dark mr-4"
-  />
-  <FeatureCard
-    @title="Coolness factor"
-    @text="3"
-    class="bg-red-dark"
-  />
-</div>
+<h3 class="mt-8 mb-2">Default values for arguments</h3>
+<CodeSnippet @name="star-rating-to-call-with-default-arg-value.hbs" class="mb-2" />
+<CodeSnippet @name="star-rating-to-with-default-arg-value.hbs" class="mb-2" />
+{{star-rating-to rating=this.model.rating}}

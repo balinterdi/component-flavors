@@ -9,6 +9,7 @@ const Router = EmberRouter.extend({
 Router.map(function() {
   this.route('presentation', function() {
     this.route('confusion');
+    this.route('clarity');
   });
   this.route('classic');
   this.route('named-arguments');

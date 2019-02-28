@@ -1,13 +1,15 @@
-{{#each (upto 1 @maxRating) as |number|}}
-  <span
-    class="rating-star"
-    role="button"
-    onclick={{action @onClick number}}
-  >
-    {{#if (gte @rating number)}}
-      <i class="fas fa-star"></i>
-    {{else}}
-      <i class="far fa-star"></i>
-    {{/if}}
-  </span>
-{{/each}}
+{{#let (or @maxRating 5) (or @onClick (noop)) as |maxRating onClick|}}
+  {{#each (upto 1 maxRating) as |number|}}
+    <span
+      class="rating-star"
+      role="button"
+      onclick={{action onClick number}}
+    >
+      {{#if (gte @rating number)}}
+        <i class="fas fa-star"></i>
+      {{else}}
+        <i class="far fa-star"></i>
+      {{/if}}
+    </span>
+  {{/each}}
+{{/let}}

@@ -18,3 +18,12 @@
 .highlighted-text {
   @apply .text-red-dark .bg-grey-light .p-1;
 }
+
+.note {
+  @apply .text-sm .text-grey-dark;
+}
+
+.menu-link {
+  @apply .no-underline .text-grey-darkest ;
+}
+

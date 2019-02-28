@@ -1,7 +1,21 @@
 <h1 class="mb-4">Angle-bracket invocation</h1>
-<div class="mb-8 p-4 bg-blue-lightest w-1/4">
-  <label class="font-bold">Variant:</label>
-  <span class="font-mono ml-4">Invocation Style</span>
+<div class="flex flex-row flex-wrap mb-8">
+  <FeatureTab
+    class="bg-blue-light"
+    @label="Variant"
+    @text="Invocation Style" />
+  <FeatureTab
+    class="bg-teal-light"
+    @label="Available"
+    @text=">= 3.4" />
+  <FeatureTab
+    class="bg-purple-light"
+    @label="HTML Semantics"
+    @text="Both" />
+  <FeatureTab
+    class="bg-red-light"
+    @label="Coolness Factor"
+    @text="" />
 </div>
 
 <h2 class="mb-4">Code</h2>
@@ -19,27 +33,7 @@
   @rating={{this.model.rating}}
   @onClick={{action (mut this.model.rating)}}
 />
-
-<h2 class="mt-8 mb-4">Features</h2>
-<div class="flex flex-row space-around text-white text-3xl">
-  <FeatureCard
-    @title="Available"
-    @text="Since 3.4"
-    class="bg-teal-dark mr-4"
-  />
-  <FeatureCard
-    @title="HTML Semantics"
-    @text="Inner"
-    class="bg-purple-dark mr-4"
-  />
-  <FeatureCard
-    @title="Splattributes"
-    @text="No"
-    class="bg-orange-dark mr-4"
-  />
-  <FeatureCard
-    @title="Coolness factor"
-    @text="3"
-    class="bg-red-dark"
-  />
-</div>
+{{input
+  type="number"
+  class="p-2"
+  value=this.model.rating}}
