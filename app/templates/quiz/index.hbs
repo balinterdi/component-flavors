@@ -1,0 +1,36 @@
+<h1 class="mb-4">Quiz Time!</h1>
+<p class="mb-8">For the following exercises, <span class="highlighted-text">this.model.rating</span> is 3.</p>
+
+<h2 class="mb-4">Quiz #1</h2>
+<h3 class="mb-2">Is the following a valid angle-bracket call?</h3>
+<CodeSnippet @name="quiz-angle-bracket-call-1.hbs" class="mb-2 w-1/2" />
+
+<h2 class="mb-3">Quiz #2</h2>
+<h3 class="mb-2">What's the value of rating in the component's template?</h3>
+<CodeSnippet @name="quiz-angle-bracket-call-2.hbs" class="mb-2 w-1/2" />
+
+<h2 class="mb-3">Quiz #3</h2>
+<h3 class="mb-2">What's wrong with the following component call?</h3>
+<CodeSnippet @name="quiz-angle-bracket-call-3.hbs" class="mb-2 w-1/2" />
+
+<h2 class="mb-4">Quiz #4</h2>
+<h3 class="mb-2">Will the selected code blocks be rendered as expected?</h3>
+<div class="flex flex-row flex-wrap ">
+  <CodeSnippet @name="quiz-code-panel.js" class="mb-2 w-2/3" />
+  <CodeSnippet @name="quiz-code-panel.hbs" class="mb-2 w-1/2" />
+  <CodeSnippet @name="quiz-code-panel-call.hbs" class="mb-8 ml-4" />
+</div>
+
+<h2 class="mb-4">Quiz #5</h2>
+<h3 class="mb-2">How many stars will be rendered in total?</h3>
+
+<div class="flex flex-row flex-wrap ">
+  <CodeSnippet @name="quiz-star-rating.js" class="mb-2 w-1/2" />
+  <CodeSnippet @name="quiz-star-rating.hbs" class="mb-2 w-1-2 ml-4" />
+  <CodeSnippet @name="quiz-star-rating-call.hbs" class="mb-8" />
+</div>
+{{!--
+ Angle-bracket components:
+ 1. No @ is used for passing the argument
+ 2. No {{...}} is used for the argument value
+--}}

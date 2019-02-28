@@ -11,6 +11,7 @@ Router.map(function() {
     this.route('confusion');
     this.route('clarity');
   });
+  this.route('quiz', function() {});
   this.route('classic');
   this.route('named-arguments');
   this.route('template-only');

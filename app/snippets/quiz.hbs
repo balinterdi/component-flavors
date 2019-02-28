@@ -1,0 +1,72 @@
+{{!-- BEGIN-SNIPPET quiz-angle-bracket-call-1 --}}
+<StarRating
+  rating={{this.model.rating}}
+  onClick={{action (mut this.model.rating)}}
+/>
+{{!-- END-SNIPPET --}}
+
+{{!-- BEGIN-SNIPPET quiz-angle-bracket-call-2 --}}
+<StarRating @rating=this.model.rating />
+{{!-- END-SNIPPET --}}
+
+{{!-- BEGIN-SNIPPET quiz-angle-bracket-call-3 --}}
+<StarRating
+  @rating={{this.model.rating}}
+  @onClick={{action (mut this.model.rating)}}
+/>
+{{!-- END-SNIPPET --}}
+
+{{!-- BEGIN-SNIPPET quiz-code-panel --}}
+<div class="...">
+  {{#each @blocks as |block|}}
+    {{#if (get @activeBlocks block.id)}}
+      <CodeBlock @label={{block.label}} as |codeBlock|>
+        {{codeBlock.snippet name=block.snippet}}
+      </CodeBlock>
+    {{/if}}
+  {{/each}}
+</div>
+{{!-- END-SNIPPET --}}
+
+{{!-- BEGIN-SNIPPET quiz-code-panel-call --}}
+<CodePanel
+  @blocks={{array
+    (hash
+      id="component"
+      label="Component"
+      snippet="star-rating.js")
+    (hash
+      id="template"
+      label="Template"
+      snippet="star-rating.hbs")
+    (hash
+      id="call"
+      label="Call"
+      snippet="star-rating-call-angle-bracket.hbs")
+    (hash
+      id="html"
+      label="HTML"
+      snippet="star-rating-classic.html")
+  }}
+/>
+{{!-- END-SNIPPET --}}
+
+{{!-- BEGIN-SNIPPET quiz-star-rating --}}
+{{#each (upto 1 @maxRating) as |number|}}
+  <span
+    class="rating-star"
+    role="button"
+    onclick={{action @onClick number}}
+  >
+    {{#if (gte @rating number)}}
+      <i class="fas fa-star"></i>
+    {{else}}
+      <i class="far fa-star"></i>
+    {{/if}}
+  </span>
+{{/each}}
+{{!-- END-SNIPPET --}}
+
+{{!-- BEGIN-SNIPPET quiz-star-rating-call --}}
+<StarRating rating=3 onClick=(action (mut this.model.rating))
+{{!-- END-SNIPPET --}}
