@@ -1,0 +1,13 @@
+{{#each this.stars as |star|}}
+  <span
+    class="rating-star"
+    role="button"
+    onclick={{action (or @onClick "noOp") star.rating}}
+  >
+    {{#if star.isFull}}
+      <i class="fas fa-star"></i>
+    {{else}}
+      <i class="far fa-star"></i>
+    {{/if}}
+  </span>
+{{/each}}

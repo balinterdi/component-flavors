@@ -1,0 +1,3 @@
+.slide-container {
+  @apply w-1/2 mx-auto mt-8 mb-16;
+}

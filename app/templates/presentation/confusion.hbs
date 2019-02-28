@@ -1,0 +1,19 @@
+<div class="slide-container">
+  <h1 class="mb-4">Obscurity in templates</h1>
+  <p class="mb-4">Where do expressions in templates come from?</p>
+  <CodeSnippet @name="confusing-template.hbs" class="mb-2" />
+
+  <p class="mb-8 note">
+    Example taken from
+    <a href="https://github.com/travis-ci/travis-web/blob/master/app/templates/components/org-item.hbs">Travis CI's org-item component</a>
+  </p>
+
+  <p class="mb-4 font-semibold">Expressions can be:</p>
+  <ul class="ml-4">
+    <li class="mb-2">Component arguments passed in</li> {{!-- Use named arguments, or this.args --}}
+    <li class="mb-2">Component properties</li> {{!-- Use this.property --}}
+    <li class="mb-2">Block variables: easy to parse because of proximity</li> {{!-- Definition is probably close enough to the place where you use it --}}
+    <li class="mb-2">Components defined elsewhere</li> {{!-- Use template imports --}}
+    <li class="mb-2">Template helpers</li> {{!-- Whatever is left --}}
+  </ul>
+</div>

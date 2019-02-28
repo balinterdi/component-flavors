@@ -1,0 +1,43 @@
+<h1 class="mb-4">Sparkles</h1>
+<div class="flex flex-row flex-wrap mb-8">
+  <FeatureTab
+    class="bg-blue-light"
+    @label="Variant"
+    @text="Component Manager" />
+  <FeatureTab
+    class="bg-teal-light"
+    @label="Available"
+    @text=">= 2.12, with addon" />
+  <FeatureTab
+    class="bg-purple-light"
+    @label="HTML Semantics"
+    @text="Outer" />
+  <FeatureTab
+    class="bg-orange-light"
+    @label="Splattributes"
+    @text="Yes" />
+  <FeatureTab
+    class="bg-red-light"
+    @label="Coolness Factor"
+    @text="" />
+</div>
+
+<h2 class="mb-4">Code</h2>
+<CodePanel
+  @blocks={{array
+    (hash id="component" label="Component" snippet="sparkles-rating.js")
+    (hash id="template" label="Template" snippet="sparkles-rating.hbs")
+    (hash id="call" label="Call" snippet="sparkles-rating-call.hbs")
+    (hash id="html" label="HTML" snippet="star-rating-sparkles.html")
+  }}
+/>
+
+<h2 class="mb-4">Result</h2>
+<SparklesRating
+  @rating={{this.model.rating}}
+  @onClick={{action (mut this.model.rating)}}
+/>
+{{input
+  type="number"
+  class="p-2"
+  value=this.model.rating}}
